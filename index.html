@@ -10,7 +10,30 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <header class="bg-primary text-white my-4">
+        <h1 class="text-center">Weather Tracker</h1>
+    </header>
+
+    <main>
+        <div class="row mx-5 text-center">
+            <aside class="col-4 px-4">
+               <h2> Search a city </h2>
+                <form class="form my-4" id="weather-form">
+                    <input class="form-control my-2" id="city-search" name="city-search" placeholder="City .e.g. 'Honolulu'" aria-label="Search">
+                    <button class="btn btn-outline-primary w-100" type="submit" id="get-weather">Search</button>
+                </form>
+                <hr class="border border-bottom border-secondary">
+                <ul class="col-12 px-4 bg-secondary text-center text-white" id="city-print"></ul>
+            </aside>
+
+            <div class="col-8 px-4">
+                <div class="container border border-primar" id="weather-display">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
