@@ -10,8 +10,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="bg-primary text-white my-4">
-        <h1 class="text-center">Weather Tracker</h1>
+    <header class="bg-primary text-white my-4 text-center">
+        <h1>Weather Tracker</h1>
+        <p id="current-day" class="lead"></p>
     </header>
 
     <main>
@@ -34,7 +35,7 @@
                         <p>Temperature: <span class="today" id="temperature"> </span></p>
                         <p>Wind Speed: <span class="today" id="wind-speed"> </span></p>
                         <p>Humidity: <span class="today" id="humidity"> </span></p> 
-                        <p>UV index: <span class="today rounded py-2 px-2" id="uv-index"> </span></p> 
+                        <p>UV Index: <span class="today rounded py-2 px-2" id="uv-index"> </span></p> 
                     </div>
                 </div>
 
@@ -82,6 +83,7 @@
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

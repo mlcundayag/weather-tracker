@@ -12,6 +12,10 @@ var uvIndexEl = $('#uv-index') //uv
 var searchedCity = [] //make an array of set objects
 var city = "" //variable to store searched city
 
+window.setInterval(function() {
+    $('#current-day').text(moment().format('dddd, MMMM Do YYYY, h:mm:ss a'))
+}, 1000);
+
 //Checked if city is already in the storage
 function find(c) {
     for (var i = 0; i < searchedCity.length; i++) {
