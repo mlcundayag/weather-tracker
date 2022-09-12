@@ -19,10 +19,11 @@
             <aside class="col-4 px-4">
                <h2> Search a city </h2>
                 <form class="form my-4" id="weather-form">
-                    <input class="form-control my-2" id="city-search" name="city-search" placeholder="City .e.g. 'Honolulu'" aria-label="Search">
-                    <button class="btn btn-outline-primary w-100" type="submit" id="get-weather">Search</button>
+                    <input type="text" class="form-control my-2" id="city-search" name="city-search" placeholder="City .e.g. 'Honolulu'" aria-label="Search">
+                    <button class="btn btn-outline-primary w-100" id="get-weather">Search</button>
                 </form>
                 <hr class="border border-bottom border-secondary">
+                <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
                 <ul class="col-12 px-4 text-center" id="city-print"></ul>
             </aside>
 
@@ -31,9 +32,50 @@
                     <div class="col-sm-12" id="weather-display">
                         <h3 class="mb-1 mt-2 bolder" id="current-city"></h3>
                         <p>Temperature: <span class="today" id="temperature"> </span></p>
-                        <p>Humidity: <span class="today" id="humidity"> </span></p> 
                         <p>Wind Speed: <span class="today" id="wind-speed"> </span></p>
-                        <p>UV index: <span class="today rounded py-2 px-2 text-white" id="uv-index"> </span></p> 
+                        <p>Humidity: <span class="today" id="humidity"> </span></p> 
+                        <p>UV index: <span class="today rounded py-2 px-2" id="uv-index"> </span></p> 
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4" id="five-day-forecast">
+                    <h3> 5-Day Forecast</h3>
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                            <p id="date-0"></p>
+                            <p id="icon-0"></p>
+                            <p>Temp: <span id="temp-0"></span></p>
+                            <p>Wind: <span id="wind-0"></span></p>
+                            <p>Humidity: <span id="humidity-0"></span></p>
+                        </div>
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                            <p id="date-1"></p>
+                            <p id="icon-1"></p>
+                            <p>Temp: <span id="temp-1"></span></p>
+                            <p>Wind: <span id="wind-"></span></p>
+                            <p>Humidity: <span id="humidity-1"></span></p>
+                        </div>
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded">
+                            <p id="date-2"></p>
+                            <p id="icon-2"></p>
+                            <p>Temp: <span id="temp-2"></span></p>
+                            <p>Wind: <span id="wind-2"></span></p>
+                            <p>Humidity: <span id="humidity-2"></span></p>
+                        </div>
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded">
+                            <p id="date-3"></p>
+                            <p id="icon-3"></p>
+                            <p>Temp: <span id="temp-3"></span></p>
+                            <p>Wind: <span id="wind-3"></span></p>
+                            <p>Humidity: <span id="humidity-3"></span></p>
+                        </div>
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                            <p id="date-4"></p>
+                            <p id="icon-4"></p>
+                            <p>Temp: <span id="temp-4"></span></p>
+                            <p>Wind: <span id="wind-4"></span></p>
+                            <p>Humidity: <span id="humidity-4"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
