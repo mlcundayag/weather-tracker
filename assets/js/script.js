@@ -3,6 +3,11 @@ var citySearchEl = $('#city-search')
 var cityPrintEl = $('#city-print')
 var weatherDisplayEl = $('#weather-display')
 var getWeatherEl = $('#get-weather')
+var currentCityEl = $('#current-city')
+var temperatureEl = $('#temperature')
+var humidityEl = $('#humidity')
+var windSpeedEl = $('#wind-speed')
+var uvIndexEl = $('#uv-index')
 
 var cities = []
 var inputCity = ""
@@ -30,6 +35,8 @@ function weatherForecast(inputCity) {
             console.log(data.main.humidity);
             console.log(data.coord.lat);
             console.log(data.coord.lon);
+            var currentTemp = Number((data.main.temp - 273.15) * 1.80 + 32).toFixed(2)
+            $(temperatureEl).text(currentTemp + ' °F')
         })
 }
 
@@ -41,9 +48,11 @@ function searchButton(event) {
     if (!inputCity) {
         return;
     }
-    cityPrintEl.append('<li class="p-2 city-list">' + inputCity + '</li>');
+    cityPrintEl.append('<li class="py-2 my-3 bg-secondary text-white city-list">' + inputCity + '</li>');
     $('input[name="city-search"]').val('');
+    $(currentCityEl).text(inputCity)
 }
 
 
 $("#get-weather").on("click",searchCity);
+$("#get-weather").on("click",searchButton);

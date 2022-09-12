@@ -23,12 +23,18 @@
                     <button class="btn btn-outline-primary w-100" type="submit" id="get-weather">Search</button>
                 </form>
                 <hr class="border border-bottom border-secondary">
-                <ul class="col-12 px-4 bg-secondary text-center text-white" id="city-print"></ul>
+                <ul class="col-12 px-4 text-center" id="city-print"></ul>
             </aside>
 
-            <div class="col-8 px-4">
-                <div class="container border border-primar" id="weather-display">
-                    
+            <div class="col-8 px-4 text-left">
+                <div class="row ml-2 border border-dark rounded">
+                    <div class="col-sm-12" id="weather-display">
+                        <h3 class="mb-1 mt-2 bolder" id="current-city"></h3>
+                        <p>Temperature: <span class="today" id="temperature"> </span></p>
+                        <p>Humidity: <span class="today" id="humidity"> </span></p> 
+                        <p>Wind Speed: <span class="today" id="wind-speed"> </span></p>
+                        <p>UV index: <span class="today rounded py-2 px-2 text-white" id="uv-index"> </span></p> 
+                    </div>
                 </div>
             </div>
         </div>
