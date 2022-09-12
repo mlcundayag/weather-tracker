@@ -89,6 +89,17 @@ function getUV(lat, lon) {
         .then(function (data) {
             console.log(data.value);
             $(uvIndexEl).text(data.value)
+            if (data.value > 0 && data.value < 3){
+                uvIndexEl.attr("style", "background-color: green");
+            } else if (data.value >= 3 && data.value < 5) {
+                uvIndexEl.attr("style", "background-color: yellow")
+            } else if (data.value >= 5 && data.value < 7 ) {
+                uvIndexEl.attr("style", "background-color: orange");
+            } else if (data.value >= 7 && data.value < 11) {
+                uvIndexEl.attr("style", "background-color: red");
+            } else if (data.value >= 11) {
+                uvIndexEl.attr("style", "background-color: purple");
+            }
         })
 }
 
