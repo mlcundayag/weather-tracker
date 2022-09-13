@@ -12,6 +12,8 @@ var uvIndexEl = $('#uv-index') //uv
 var searchedCity = [] //make an array of set objects
 var city = "" //variable to store searched city
 
+
+//show date and time on the header
 window.setInterval(function() {
     $('#current-day').text(moment().format('dddd, MMMM Do YYYY, h:mm:ss a'))
 }, 1000);
@@ -26,7 +28,7 @@ function find(c) {
     return 1;
 }
 
-
+//trim input
 function searchCity(event) {
     event.preventDefault
     if (citySearchEl.val().trim() !== "") {
@@ -35,7 +37,7 @@ function searchCity(event) {
     }
 }
 
-
+//fetch data of API
 function weatherForecast(city) {
     var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=56ba39e8ad5c62fe3744a7e89048f354';
     fetch(requestUrl)
@@ -61,6 +63,7 @@ function weatherForecast(city) {
 
             getUV(data.coord.lat, data.coord.lon);
             forecast(data.id);
+            //set and get data from local storage
             if (data.cod == 200) {
                 searchedCity = JSON.parse(localStorage.getItem("cityName"));
                 if (searchedCity == null) {
@@ -80,6 +83,7 @@ function weatherForecast(city) {
         });
 }
 
+//use a separate fetch for UV index
 function getUV(lat, lon) {
     var UVIndexUrl = 'https://api.openweathermap.org/data/2.5/uvi?appid=56ba39e8ad5c62fe3744a7e89048f354&lat=' + lat + '&lon=' + lon;
     fetch(UVIndexUrl)
@@ -89,6 +93,7 @@ function getUV(lat, lon) {
         .then(function (data) {
             console.log(data.value);
             $(uvIndexEl).text(data.value)
+            //change background color of UV index text depending on intensity
             if (data.value > 0 && data.value < 3){
                 uvIndexEl.attr("style", "background-color: green; color: white");
             } else if (data.value >= 3 && data.value < 5) {
@@ -103,6 +108,7 @@ function getUV(lat, lon) {
         })
 }
 
+//show forecast for next 5 days
 function forecast(cityID) {
     var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=56ba39e8ad5c62fe3744a7e89048f354";
     fetch(forecastUrl)
@@ -129,6 +135,7 @@ function forecast(cityID) {
         });
 }
 
+//rendering search history to the page
 function renderList(c) {
     var listEl = $("<li>" + c.toUpperCase() + "</li>");
     $(listEl).attr("class", "py-2 my-3 bg-secondary text-white city-list");
@@ -136,6 +143,7 @@ function renderList(c) {
     $(cityPrintEl).append(listEl);
 }
 
+//load last search history upon reload
 function renderPastSearch(event) {
     var liEl = event.target;
     if (event.target.matches("li")) {
@@ -144,6 +152,7 @@ function renderPastSearch(event) {
     }
 }
 
+//render past searches to the pages pulled from local storage
 function showCity() {
     $("ul").empty();
     var searchedCity = JSON.parse(localStorage.getItem("cityName"));
@@ -157,6 +166,7 @@ function showCity() {
     }
 }
 
+//clear history 
 function reset(event) {
     event.preventDefault();
     searchedCity = [];
@@ -164,7 +174,7 @@ function reset(event) {
     document.location.reload();
 }
 
-
+//input city upon search
 function searchButton(event) {
     event.preventDefault();
     var inputCity = $('input[name="city-search"]').val();
@@ -175,7 +185,7 @@ function searchButton(event) {
     $(currentCityEl).text(inputCity)
 }
 
-
+//event listeners
 $("#get-weather").on("click",searchCity);
 $("#get-weather").on("click",searchButton);
 $(document).on("click", renderPastSearch)

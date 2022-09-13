@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Crimson+Text:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Weather Tracker</title>
 </head>
 
 <body>
+    <!-- Top of the page with date and time -->
     <header class="text-white my-4 text-center">
         <h1>Weather Tracker</h1>
         <p id="current-day" class="lead"></p>
@@ -23,6 +24,8 @@
 
     <main>
         <div class="row mx-5 text-center">
+
+            <!-- Input, buttons and history list -->
             <aside class="col-md-4 px-4">
                 <h2> Search a city </h2>
                 <form class="form my-4" id="weather-form">
@@ -35,6 +38,7 @@
                 <ul class="col-12 px-4 text-center" id="city-print"></ul>
             </aside>
 
+            <!-- show today's weather forecast -->
             <div class="col-12 col-md-8 px-4" id="forecast-container">
                 <div class="row ml-md-2 border border-dark rounded">
                     <div class="col-12" id="weather-display">
@@ -46,6 +50,7 @@
                     </div>
                 </div>
 
+                <!-- show the five-day forecast -->
                 <div class="col-12 mt-4" id="five-day-forecast">
                     <h3> 5-Day Forecast</h3>
                     <div class="d-md-flex flex-row justify-content-between">
