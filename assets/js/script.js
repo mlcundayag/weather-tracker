@@ -90,15 +90,15 @@ function getUV(lat, lon) {
             console.log(data.value);
             $(uvIndexEl).text(data.value)
             if (data.value > 0 && data.value < 3){
-                uvIndexEl.attr("style", "background-color: green");
+                uvIndexEl.attr("style", "background-color: green; color: white");
             } else if (data.value >= 3 && data.value < 5) {
-                uvIndexEl.attr("style", "background-color: yellow")
+                uvIndexEl.attr("style", "background-color: yellow; color: black")
             } else if (data.value >= 5 && data.value < 7 ) {
-                uvIndexEl.attr("style", "background-color: orange");
+                uvIndexEl.attr("style", "background-color: orange; color: white");
             } else if (data.value >= 7 && data.value < 11) {
-                uvIndexEl.attr("style", "background-color: red");
+                uvIndexEl.attr("style", "background-color: red; color: white");
             } else if (data.value >= 11) {
-                uvIndexEl.attr("style", "background-color: purple");
+                uvIndexEl.attr("style", "background-color: purple; color: white");
             }
         })
 }
@@ -152,7 +152,7 @@ function showCity() {
         for (i = 0; i < searchedCity.length; i++) {
             renderList(searchedCity[i]);
         }
-        city = searchedCity[i - 1];
+        city = searchedCity[i - 1]
         weatherForecast(city)
     }
 }

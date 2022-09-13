@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Crimson+Text:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <header class="bg-primary text-white my-4 text-center">
+    <header class="text-white my-4 text-center">
         <h1>Weather Tracker</h1>
         <p id="current-day" class="lead"></p>
     </header>
 
     <main>
         <div class="row mx-5 text-center">
-            <aside class="col-4 px-4">
-               <h2> Search a city </h2>
+            <aside class="col-md-4 px-4">
+                <h2> Search a city </h2>
                 <form class="form my-4" id="weather-form">
-                    <input type="text" class="form-control my-2" id="city-search" name="city-search" placeholder="City .e.g. 'Honolulu'" aria-label="Search">
+                    <input type="text" class="form-control my-2" id="city-search" name="city-search"
+                        placeholder="City .e.g. 'Honolulu'" aria-label="Search">
                     <button class="btn btn-outline-primary w-100" id="get-weather">Search</button>
                 </form>
                 <hr class="border border-bottom border-secondary">
@@ -28,28 +35,28 @@
                 <ul class="col-12 px-4 text-center" id="city-print"></ul>
             </aside>
 
-            <div class="col-8 px-4 text-left">
-                <div class="row ml-2 border border-dark rounded">
-                    <div class="col-sm-12" id="weather-display">
+            <div class="col-12 col-md-8 px-4" id="forecast-container">
+                <div class="row ml-md-2 border border-dark rounded">
+                    <div class="col-12" id="weather-display">
                         <h3 class="mb-1 mt-2 bolder" id="current-city"></h3>
                         <p>Temperature: <span class="today" id="temperature"> </span></p>
                         <p>Wind Speed: <span class="today" id="wind-speed"> </span></p>
-                        <p>Humidity: <span class="today" id="humidity"> </span></p> 
-                        <p>UV Index: <span class="today rounded py-2 px-2 text-white" id="uv-index"> </span></p> 
+                        <p>Humidity: <span class="today" id="humidity"> </span></p>
+                        <p>UV Index: <span class="today rounded py-2 px-2" id="uv-index"> </span></p>
                     </div>
                 </div>
 
                 <div class="col-12 mt-4" id="five-day-forecast">
                     <h3> 5-Day Forecast</h3>
-                    <div class="d-flex flex-row justify-content-between">
-                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                    <div class="d-md-flex flex-row justify-content-between">
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded">
                             <p id="date-0"></p>
                             <p id="icon-0"></p>
                             <p>Temp: <span id="temp-0"></span></p>
                             <p>Wind: <span id="wind-0"></span></p>
                             <p>Humidity: <span id="humidity-0"></span></p>
                         </div>
-                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded">
                             <p id="date-1"></p>
                             <p id="icon-1"></p>
                             <p>Temp: <span id="temp-1"></span></p>
@@ -70,7 +77,7 @@
                             <p>Wind: <span id="wind-3"></span></p>
                             <p>Humidity: <span id="humidity-3"></span></p>
                         </div>
-                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded" >
+                        <div class="bg-primary forecast text-white mb-3 p-2 mt-2 rounded">
                             <p id="date-4"></p>
                             <p id="icon-4"></p>
                             <p>Temp: <span id="temp-4"></span></p>
@@ -86,4 +93,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

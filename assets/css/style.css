@@ -1,0 +1,23 @@
+body {
+    font-family: 'Crimson Text', serif;
+    color: white;
+    background-color: black;
+}
+
+#forecast-container {
+    text-align: left;
+}
+
+@media screen and (max-width: 576px) {
+    #city-print, #clear-history {
+        display: none;
+    }
+
+    #forecast-container {
+        text-align: center;
+    }
+
+    .forecast {
+        line-height: 1;
+    }
+}
